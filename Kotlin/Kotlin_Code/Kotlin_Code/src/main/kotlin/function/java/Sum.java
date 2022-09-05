@@ -1,4 +1,4 @@
-package function;
+package function.java;
 
 public class Sum {
 
