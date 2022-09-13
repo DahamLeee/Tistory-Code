@@ -135,22 +135,24 @@ class BookServiceTest @Autowired constructor(
     @DisplayName("분야별 책 권수를 정상 확인한다")
     fun getBookStatisticsTest() {
         // given
-        bookRepository.saveAll(listOf(
-            Book.fixture("A", BookType.COMPUTER),
-            Book.fixture("B", BookType.COMPUTER),
-            Book.fixture("C", BookType.SCIENCE),
-        ))
+        bookRepository.saveAll(
+            listOf(
+                Book.fixture("A", BookType.COMPUTER),
+                Book.fixture("B", BookType.COMPUTER),
+                Book.fixture("C", BookType.SCIENCE),
+            )
+        )
 
         // when
         val results = bookService.getBookStatistics()
 
         // then
         assertThat(results).hasSize(2)
-        assertCount(results, BookType.COMPUTER, 2)
-        assertCount(results, BookType.SCIENCE, 1)
+        assertCount(results, BookType.COMPUTER, 2L)
+        assertCount(results, BookType.SCIENCE, 1L)
     }
 
-    private fun assertCount(results: List<BookStatResponse>, type: BookType, count: Int) {
+    private fun assertCount(results: List<BookStatResponse>, type: BookType, count: Long) {
         assertThat(results.first { result -> result.type == type }.count).isEqualTo(count)
     }
 
