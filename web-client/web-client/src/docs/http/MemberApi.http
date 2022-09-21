@@ -1,0 +1,2 @@
+### GET Members From localhost:8080
+GET localhost:3000/members
