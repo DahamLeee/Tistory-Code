@@ -1,2 +1,11 @@
 ### GET Members From localhost:8080
 GET localhost:3000/members
+
+### POST Members From localhost:8080
+POST localhost:3000/members
+Content-Type: application/json
+
+{
+  "name": "이다함",
+  "age": 26
+}

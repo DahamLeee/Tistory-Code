@@ -1,4 +1,4 @@
-package com.wangtak.webclient.member.domain;
+package com.wangtak.webclient.member.application.dto;
 
 public class ReceivedMember {
 

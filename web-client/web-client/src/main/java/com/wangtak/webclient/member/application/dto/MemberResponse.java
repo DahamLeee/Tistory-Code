@@ -1,6 +1,4 @@
-package com.wangtak.webclient.member.application.response;
-
-import com.wangtak.webclient.member.domain.ReceivedMember;
+package com.wangtak.webclient.member.application.dto;
 
 import java.util.List;
 
