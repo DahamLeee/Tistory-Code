@@ -1,7 +1,8 @@
 package com.wangtak.member.application;
 
-import com.wangtak.member.application.dto.MemberDto;
-import com.wangtak.member.application.response.MemberResponse;
+import com.wangtak.member.application.dto.MemberCreateRequest;
+import com.wangtak.member.application.dto.MemberResponse;
+import com.wangtak.member.application.dto.MemberResponses;
 import com.wangtak.member.domain.Member;
 import com.wangtak.member.domain.MemberRepository;
 import org.springframework.stereotype.Service;
@@ -18,11 +19,16 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
-    public MemberResponse members() {
+    public MemberResponses members() {
         List<Member> members = memberRepository.findAll();
 
         return members.stream()
-                .map(MemberDto::toDto)
-                .collect(Collectors.collectingAndThen(Collectors.toList(), MemberResponse::new));
+                .map(MemberResponse::toDto)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), MemberResponses::new));
+    }
+
+    public MemberResponse createMember(MemberCreateRequest memberCreateRequest) {
+        Member savedMember = memberRepository.save(Member.of(memberCreateRequest.getName(), memberCreateRequest.getAge()));
+        return MemberResponse.toDto(savedMember);
     }
 }
