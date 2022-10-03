@@ -80,7 +80,7 @@ B+Tree가 DB index를 위한 자료구조로 적합한 이유를 정리해보면
 
 <br>
 
-![B+Tree First Status](/TIL/DB/img/B%2Btree%20First%20Status.png)
+![B+Tree First Status](/DB/img/B%2Btree%20First%20Status.png)
 
 먼저 위 사진을 살펴보면 `학생(Student) 테이블의 이름(name) 컬럼에 인덱스`를 걸었을 때 확인할 수 있는 B+Tree 구조입니다.  
 `모든 데이터는 정렬`되어 있으며, B+Tree의 특징에 맞게 leaf node는 연결 리스트로 이어져 있음을 확인할 수 있습니다.   
@@ -90,7 +90,7 @@ B+Tree가 DB index를 위한 자료구조로 적합한 이유를 정리해보면
 
 <br>
 
-![B+Tree query](/TIL/DB/img/B%2Btree%20query.png)
+![B+Tree query](/DB/img/B%2Btree%20query.png)
 
 우리는 "배준석"보다 사전적으로 이름이 큰 모든 학생을 찾고 싶다는 `SELECT * FROM Student WHERE 이름 >= "배준석";` 쿼리를 실행했다고 가정해보겠습니다.
 
