@@ -33,7 +33,7 @@ public class Team {
 }
 ```
 
-![N + 1 문제](/Spring/JPA/img/N%2B1%20%EB%AC%B8%EC%A0%9C.png)
+![N + 1 문제](/TIL/Spring/JPA/img/N%2B1%20%EB%AC%B8%EC%A0%9C.png)
 
 위와 같이 `Member`, `Team` 엔티티를 사용하여 서로 연관 관계를 맺은 이후에 모든 멤버를 조회하는 쿼리를 날렸다고 가정해보겠습니다. Java 에서는 Spring Data JPA에서 제공하는 findAll() 메서드를 호출한겁니다! (ex. memberRepository.findAll()) 
 
