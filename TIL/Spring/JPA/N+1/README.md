@@ -82,12 +82,12 @@ Team 엔티티는 Proxy 객체이기 때문에 실제 Team 객체가 가지고 �
 지금까지 N + 1 문제가 어떤 것인지 정리해봤습니다. 여기서 가장 좋은 방법은 1번의 쿼리로 우리가 원하는 값을 한 번에 긁어오는 것이라 생각할 수 있을 거 같습니다. 그리고 그 방법을 다음에 정리하도록 하겠습니다.
 
 ## 추가적인 자료 (Proxy 객체)
-![N + 1 문제](/Spring/JPA/img/Proxy%20%EA%B0%9D%EC%B2%B4.png)
+![N + 1 문제](/TIL/Spring/JPA/img/Proxy%20%EA%B0%9D%EC%B2%B4.png)
 
 5명의 Member, 3개의 Team이 존재할 때 findAll() 이후에 찾은 Member가 보유한 Team의 클래스를 확인해보면 위처럼 HibernateProxy가 붙어있음을 확인할 수 있습니다.
 
 ## 추가적인 자료 (추가적인 쿼리 수행)
-![N + 1 문제](/Spring/JPA/img/%EC%BF%BC%EB%A6%AC%20%EC%88%98%ED%96%89%20%EA%B2%B0%EA%B3%BC.png)
+![N + 1 문제](/TIL/Spring/JPA/img/%EC%BF%BC%EB%A6%AC%20%EC%88%98%ED%96%89%20%EA%B2%B0%EA%B3%BC.png)
 
 <br>
 
